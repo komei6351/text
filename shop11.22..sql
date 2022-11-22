@@ -40,20 +40,20 @@ CREATE TABLE `kojin` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `mst_staff`
+-- テーブルの構造 `mst_kojin`
 --
 
-CREATE TABLE `mst_staff` (
+CREATE TABLE `mst_kojin` (
   `code` int(11) NOT NULL,
   `name` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(32) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- テーブルのデータのダンプ `mst_staff`
+-- テーブルのデータのダンプ `mst_kojin`
 --
 
-INSERT INTO `mst_staff` (`code`, `name`, `password`) VALUES
+INSERT INTO `mst_kojin` (`code`, `name`, `password`) VALUES
 (1, 'ろくまる', '12345678901234567890123456789012'),
 (2, 'aaa', '202cb962ac59075b964b07152d234b70'),
 (3, 'bbb', '202cb962ac59075b964b07152d234b70');
@@ -69,9 +69,9 @@ ALTER TABLE `kojin`
   ADD PRIMARY KEY (`ID`);
 
 --
--- テーブルのインデックス `mst_staff`
+-- テーブルのインデックス `mst_kojin`
 --
-ALTER TABLE `mst_staff`
+ALTER TABLE `mst_kojin`
   ADD PRIMARY KEY (`code`);
 
 --
@@ -85,9 +85,9 @@ ALTER TABLE `kojin`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- テーブルの AUTO_INCREMENT `mst_staff`
+-- テーブルの AUTO_INCREMENT `mst_kojin`
 --
-ALTER TABLE `mst_staff`
+ALTER TABLE `mst_kojin`
   MODIFY `code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
