@@ -13,7 +13,7 @@ $kojin_id     = $_POST['id'];
 $kojin_name   = $_POST['name'];
 $kojin_huri   = $_POST['huri'];
 $kojin_yubin  = $_POST['yubin'];
-$kojin_jyusyo = $_POST['jyusyo'];
+$kojin_jusyo = $_POST['jusyo'];
 $kojin_den    = $_POST['den'];
 $kojin_mail   = $_POST['mail'];
 
@@ -21,7 +21,7 @@ $kojin_id  = htmlspecialchars($kojin_id,ENT_QUOTES,'UTF-8');
 $kojin_name  = htmlspecialchars($kojin_name,ENT_QUOTES,'UTF-8');
 $kojin_huri = htmlspecialchars($kojin_huri,ENT_QUOTES,'UTF-8');
 $kojin_yubin = htmlspecialchars($kojin_yubin,ENT_QUOTES,'UTF-8');
-$kojin_jyusyo = htmlspecialchars($kojin_jyusyo,ENT_QUOTES,'UTF-8');
+$kojin_jusyo = htmlspecialchars($kojin_jusyo,ENT_QUOTES,'UTF-8');
 $kojin_den = htmlspecialchars($kojin_den,ENT_QUOTES,'UTF-8');
 $kojin_mail = htmlspecialchars($kojin_mail,ENT_QUOTES,'UTF-8');
 
@@ -57,11 +57,11 @@ if ($kojin_yubin == '') {
     print '<br />';
 }
 
-if ($kojin_jyusyo == '') {
+if ($kojin_jusyo == '') {
     print'スタッフ名が入力されていません。<br />';
 } else {
     print 'スタッフ名 :';
-    print $kojin_jyusyo;
+    print $kojin_jusyo;
     print '<br />';
 }
 
@@ -81,7 +81,7 @@ if ($kojin_mail == '') {
     print '<br />';
 }
 
-    if ($kojin_id == '' || $kojin_name == '' || $kojin_huri == '' || $kojin_yubin == '' || $kojin_jyusyo == '' || $kojin_den == '' || $kojin_mail == '') {
+    if ($kojin_id == '' || $kojin_name == '' || $kojin_huri == '' || $kojin_yubin == '' || $kojin_jusyo == '' || $kojin_den == '' || $kojin_mail == '') {
         print '<form>';
         print '<button type="button" onclick="history.back()">戻る</button>';
         print '</form>';
@@ -92,7 +92,7 @@ if ($kojin_mail == '') {
         print '<input type="hidden" name="pass" value="'.$kojin_name .'">';
         print '<input type="hidden" name="name" value="'.$kojin_huri .'">';
         print '<input type="hidden" name="pass" value="'.$kojin_yubin .'">';
-        print '<input type="hidden" name="name" value="'.$kojin_jyusyo .'">';
+        print '<input type="hidden" name="name" value="'.$kojin_jusyo .'">';
         print '<input type="hidden" name="pass" value="'.$kojin_den .'">';
         print '<input type="hidden" name="pass" value="'.$kojin_mail .'">';
         print '<br />';
