@@ -13,17 +13,17 @@
         $kojin_name   = $_POST['name'];
         $kojin_huri   = $_POST['huri'];
         $kojin_yubin  = $_POST['yubin'];
-        $kojin_jyusyo = $_POST['jyusyo'];
+        $kojin_jusyo  = $_POST['jusyo'];
         $kojin_den    = $_POST['den'];
         $kojin_mail   = $_POST['mail'];
     
-        $kojin_id  = htmlspecialchars($kojin_id,ENT_QUOTES,'UTF-8');
+        $kojin_id    = htmlspecialchars($kojin_id,ENT_QUOTES,'UTF-8');
         $kojin_name  = htmlspecialchars($kojin_name,ENT_QUOTES,'UTF-8');
-        $kojin_huri = htmlspecialchars($kojin_huri,ENT_QUOTES,'UTF-8');
+        $kojin_huri  = htmlspecialchars($kojin_huri,ENT_QUOTES,'UTF-8');
         $kojin_yubin = htmlspecialchars($kojin_yubin,ENT_QUOTES,'UTF-8');
-        $kojin_jyusyo = htmlspecialchars($kojin_jyusyo,ENT_QUOTES,'UTF-8');
-        $kojin_den = htmlspecialchars($kojin_den,ENT_QUOTES,'UTF-8');
-        $kojin_mail = htmlspecialchars($kojin_mail,ENT_QUOTES,'UTF-8');
+        $kojin_jusyo = htmlspecialchars($kojin_jusyo,ENT_QUOTES,'UTF-8');
+        $kojin_den   = htmlspecialchars($kojin_den,ENT_QUOTES,'UTF-8');
+        $kojin_mail  = htmlspecialchars($kojin_mail,ENT_QUOTES,'UTF-8');
 
         $dsn  = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = 'root';
@@ -37,7 +37,7 @@
         $data[] = $kojin_name;
         $data[] = $kojin_huri;
         $data[] = $kojin_yubin;
-        $data[] = $kojin_jyusyo;
+        $data[] = $kojin_jusyo;
         $data[] = $kojin_den;
         $data[] = $kojin_mail;
         $stmt -> execute($data);

@@ -21,7 +21,7 @@
 
         $dbh = null;
 
-        print "スタッフ一覧<br /><br />\n";
+        print "個人情報<br /><br />\n";
 
         print '<form method="post" action="kojin_branch.php">'."\n";
         while (true) {
