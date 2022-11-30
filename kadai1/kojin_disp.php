@@ -3,6 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>個人情報</title>
+        <link type="text/css" href="kojin_list.css" rel="stylesheet">
+        <meta http-equiv="Cache-Control" content="no-cache">
+
     </head>
     <body>
 
@@ -10,7 +13,7 @@
 
     try {
 
-        $kojin_code = $_GET['kojincode'];
+        $kojin_id = $_GET['kojinid'];
 
         $dsn  = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = 'root';
@@ -18,13 +21,15 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'SELECT name FROM kojin WHERE code=?';
+        $sql = 'SELECT name FROM kojin WHERE id=?';
         $stmt = $dbh -> prepare($sql);
-        $data[] = $kojin_code;
+        $data[] = $kojin_id;
         $stmt -> execute($data);
 
         $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
         $kojin_name = $rec['name'];
+        $kojin_huri = $rec['huri'];
+        
 
         $dbh = null;
 
@@ -38,11 +43,13 @@
     個人情報参照<br />
     <br />
     個人コード<br />
-    <?php print $kojin_code; ?>
+    <?php print $kojin_id; ?>
     <br />
-    スタッフ名<br />
+    氏名<br />
     <?php print $kojin_name; ?>
     <br />
+    ふりがな<br />
+    <?php print $kojin_huri; ?>
     <br />
     <form>
     <button type="button" onclick="history.back()">戻る</button>

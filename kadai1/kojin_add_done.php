@@ -3,13 +3,16 @@
     <head>
         <meta charset="utf-8">
         <title>個人情報</title>
+        <link type="text/css" href="kojin_list.css" rel="stylesheet">
+        <meta http-equiv="Cache-Control" content="no-cache">
+
     </head>
     <body>
 
     <?php
 
     try {
-        $kojin_id     = $_POST['id'];
+
         $kojin_name   = $_POST['name'];
         $kojin_huri   = $_POST['huri'];
         $kojin_yubin  = $_POST['yubin'];
@@ -17,7 +20,6 @@
         $kojin_den    = $_POST['den'];
         $kojin_mail   = $_POST['mail'];
     
-        $kojin_id    = htmlspecialchars($kojin_id,ENT_QUOTES,'UTF-8');
         $kojin_name  = htmlspecialchars($kojin_name,ENT_QUOTES,'UTF-8');
         $kojin_huri  = htmlspecialchars($kojin_huri,ENT_QUOTES,'UTF-8');
         $kojin_yubin = htmlspecialchars($kojin_yubin,ENT_QUOTES,'UTF-8');
@@ -31,9 +33,8 @@
         $dbh  = new PDO($dsn, $user, $password);
         $dbh  -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $spl  = 'INSERT INTO mst_kojin(name, password) VALUES (?,?)';
+        $spl  = 'INSERT INTO kojin(name, huri, yubin, jusyo, den, mail) VALUES (?,?,?,?,?,?)';
         $stmt = $dbh -> prepare($spl);
-        $data[] = $kojin_id;
         $data[] = $kojin_name;
         $data[] = $kojin_huri;
         $data[] = $kojin_yubin;

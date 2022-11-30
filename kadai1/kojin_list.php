@@ -2,7 +2,9 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>個人情報</title>
+        <title>個人情報一覧</title>
+        <link type="text/css" href="kojin_list.css" rel="stylesheet">
+        <meta http-equiv="Cache-Control" content="no-cache">
     </head>
     <body>
 
@@ -15,7 +17,7 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'SELECT code, name FROM mst_kojin WHERE 1';
+        $sql = 'SELECT id, name FROM kojin WHERE 1';
         $stmt = $dbh -> prepare($sql);
         $stmt -> execute();
 
@@ -29,7 +31,7 @@
             if ($rec == false) {
                 break;
             }
-            print '<input type="radio" name="kojincode" value="'.$rec['code'] .'">';
+            print '<input type="radio" name="kojinid" value="'.$rec['id'] .'">';
             print $rec['name'];
             print '<br />'."\n";
         }

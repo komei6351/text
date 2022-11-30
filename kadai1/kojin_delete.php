@@ -3,6 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>個人情報</title>
+        <link type="text/css" href="kojin_list.css" rel="stylesheet">
+        <meta http-equiv="Cache-Control" content="no-cache">
+
     </head>
     <body>
 
@@ -10,7 +13,7 @@
 
     try {
 
-        $kojin_code = $_GET['kojincode'];
+        $kojin_id = $_GET['kojinid'];
 
         $dsn  = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = 'root';
@@ -18,9 +21,9 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'SELECT name FROM mst_kojin WHERE code=?';
+        $sql = 'SELECT name FROM kojin WHERE id=?';
         $stmt = $dbh -> prepare($sql);
-        $data[] = $kojin_code;
+        $data[] = $kojin_id;
         $stmt -> execute($data);
 
         $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
@@ -38,7 +41,7 @@
     スタッフ削除<br />
     <br />
     スタッフコード<br />
-    <?php print $kojin_code; ?>
+    <?php print $kojin_id; ?>
     <br />
     スタッフ名<br />
     <?php print $kojin_name;?>
@@ -46,7 +49,7 @@
     このスタッフを削除してよろしいですか？<br />
     <br />
     <form method="post" action="kojin_delete_done.php">
-    <input type="hidden" name="code" value="<?php print $kojin_code; ?>">    
+    <input type="hidden" name="id" value="<?php print $kojin_id; ?>">    
     <button type="button" onclick="history.back()">戻る</button>
     <button type="submit">Ｏｋ</button>
     </form>
