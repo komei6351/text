@@ -21,35 +21,32 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'SELECT name FROM kojin WHERE id=?';
+        $sql = 'SELECT id,name FROM kojin WHERE id=?';
         $stmt = $dbh -> prepare($sql);
         $data[] = $kojin_id;
         $stmt -> execute($data);
 
         $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
         $kojin_name = $rec['name'];
-        $kojin_huri = $rec['huri'];
-        
 
         $dbh = null;
 
     } catch (Exception $e) {
         print 'ただいま障害により大変ご迷惑をお掛けしております。';
+        print '<br>' .$e -> getMessage();
         exit();
     }
 
     ?>
 
-    個人情報参照<br />
+    個別表示<br />
     <br />
-    個人コード<br />
+    個人ID<br />
     <?php print $kojin_id; ?>
     <br />
     氏名<br />
     <?php print $kojin_name; ?>
     <br />
-    ふりがな<br />
-    <?php print $kojin_huri; ?>
     <br />
     <form>
     <button type="button" onclick="history.back()">戻る</button>

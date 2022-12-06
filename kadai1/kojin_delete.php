@@ -38,15 +38,15 @@
 
     ?>
 
-    スタッフ削除<br />
+    削除<br />
     <br />
-    スタッフコード<br />
+    個人ID<br />
     <?php print $kojin_id; ?>
     <br />
-    スタッフ名<br />
+    氏名<br />
     <?php print $kojin_name;?>
     <br />
-    このスタッフを削除してよろしいですか？<br />
+    この氏名を削除してよろしいですか？<br />
     <br />
     <form method="post" action="kojin_delete_done.php">
     <input type="hidden" name="id" value="<?php print $kojin_id; ?>">    

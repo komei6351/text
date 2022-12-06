@@ -17,7 +17,7 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'SELECT id, name FROM kojin WHERE 1';
+        $sql = 'SELECT id, name, huri FROM kojin WHERE 1';
         $stmt = $dbh -> prepare($sql);
         $stmt -> execute();
 
@@ -32,8 +32,10 @@
                 break;
             }
             print '<input type="radio" name="kojinid" value="'.$rec['id'] .'">';
-            print $rec['name'];
-            print '<br />'."\n";
+            print "  ID". " ". $rec['id']. '<br />';
+            print "　　氏名". " ". $rec['name']. '<br />';
+            print "ふりがな". " ". $rec['huri']. '<br />'. "\n";
+
         }
         print '<button type="submit" name="disp">個別表示</button>';
         print '<button type="submit" name="edit">データ修正</button>';

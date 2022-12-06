@@ -9,7 +9,7 @@
     </head>
     <body>
 
-    スタッフ追加<br />
+    新規登録<br />
     <br />
     <form method="post" action="kojin_add_check.php">
         氏名を入力してください。<br />
