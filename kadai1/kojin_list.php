@@ -37,6 +37,7 @@
             print "ふりがな". " ". $rec['huri']. '<br />'. "\n";
 
         }
+        print'<br />';
         print '<button type="submit" name="disp">個別表示</button>';
         print '<button type="submit" name="edit">データ修正</button>';
         print '<button type="submit" name="add">新規登録</button>';

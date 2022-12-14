@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 
-
 body {
     margin-top: 5%;
     text-align: center;
@@ -13,7 +12,6 @@ body {
 button {
     font-size: 30px;
     width: 15%;
-    height: 5%;
 }
 
 input[type=radio] {
@@ -25,7 +23,4 @@ input[type=radio] {
 input[type=text] {
     font-size: 30px;
 }
-
-
-
 

@@ -60,7 +60,7 @@
     <input type="email" name="mail" style="width:300px"><br />
     <br />
     <button type="button" onclick="history.back()">戻る</button>
-    <button type="submit">Ｏｋ</button>
+    <button type="submit">ＯＫ</button>
     </form>
 
     </body>
