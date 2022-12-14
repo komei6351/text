@@ -8,8 +8,13 @@
 
     </head>
     <body>
-
+    <br />
+    <br />
+    <br />
+    <br />
     個人が選択されていません。 <br />
+    <br />
+    <br />
     <a href="kojin_list.php">戻る</a>
     
     </body>
