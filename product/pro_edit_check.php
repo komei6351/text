@@ -11,12 +11,11 @@
 
     $pro_code  = $_POST['code'];
     $pro_name  = $_POST['name'];
-    $pro_pass  = $_POST['pass'];
-    $pro_pass2 = $_POST['pass2'];
+    $pro_price  = $_POST['price'];
 
+    $pro_code  = htmlspecialchars($pro_code,ENT_QUOTES,'UTF-8');
     $pro_name  = htmlspecialchars($pro_name,ENT_QUOTES,'UTF-8');
-    $pro_pass  = htmlspecialchars($pro_pass,ENT_QUOTES,'UTF-8');
-    $pro_pass2 = htmlspecialchars($pro_pass2,ENT_QUOTES,'UTF-8');
+    $pro_price = htmlspecialchars($pro_price,ENT_QUOTES,'UTF-8');
 
     if ($pro_name == '') {
         print'スタッフ名が入力されていません。<br />';

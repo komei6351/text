@@ -38,12 +38,14 @@
 
     商品情報参照<br />
     <br />
-    スタッフコード<br />
+    商品コード<br />
     <?php print $pro_code; ?>
     <br />
-    スタッフ名<br />
+    商品名<br />
     <?php print $pro_name; ?>
     <br />
+    価格<br />
+    <?php print $pro_price; ?>円
     <br />
     <form>
     <button type="button" onclick="history.back()">戻る</button>
