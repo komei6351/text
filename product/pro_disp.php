@@ -18,13 +18,14 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'SELECT name FROM mst_pro WHERE code=?';
+        $sql = 'SELECT name,price FROM mst_product WHERE code=?';
         $stmt = $dbh -> prepare($sql);
         $data[] = $pro_code;
         $stmt -> execute($data);
 
         $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
         $pro_name = $rec['name'];
+        $pro_price = $rec['price'];
 
         $dbh = null;
 
@@ -35,7 +36,7 @@
 
     ?>
 
-    スタッフ情報参照<br />
+    商品情報参照<br />
     <br />
     スタッフコード<br />
     <?php print $pro_code; ?>
