@@ -17,7 +17,7 @@
         $dbh  = new PDO($dsn, $user, $password);
         $dbh  -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $spl  = 'DELETE FROM mst_pro WHERE code=?';
+        $spl  = 'DELETE FROM mst_prodoct WHERE code=?';
         $stmt = $dbh -> prepare($spl);
         $data[] = $pro_code;
         $stmt -> execute($data);

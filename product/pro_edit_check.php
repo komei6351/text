@@ -18,31 +18,27 @@
     $pro_price = htmlspecialchars($pro_price,ENT_QUOTES,'UTF-8');
 
     if ($pro_name == '') {
-        print'スタッフ名が入力されていません。<br />';
+        print'商品名が入力されていません。<br />';
     } else {
-        print 'スタッフ名 :';
+        print '商品名 :';
         print $pro_name;
         print '<br />';
     }
 
-    if ($pro_pass == '') {
-        print 'パスワードが入力されていません。<br />';
+    if ($pro_price == '') {
+        print '価格が入力されていません。<br />';
     }
 
-    if ($pro_pass != $pro_pass2) {
-        print 'パスワードが一致しません。<br />';
-    }
-
-    if ($pro_name == '' || $pro_pass == '' || $pro_pass2 == '') {
+    if ($pro_name == '' || $pro_price == '') {
         print '<form>';
         print '<button type="button" onclick="history.back()">戻る</button>';
         print '</form>';
     } else {
-        $pro_pass = md5($pro_pass);
+        print '上期のように変更します。<br />';
         print '<form method="post" action="pro_edit_done.php">';
         print '<input type="hidden" name="code" value="'.$pro_code .'">';
         print '<input type="hidden" name="name" value="'.$pro_name .'">';
-        print '<input type="hidden" name="pass" value="'.$pro_pass .'">';
+        print '<input type="hidden" name="pass" value="'.$pro_price .'">';
         print '<br />';
         print '<button type="button" onclick="history.back()">戻る</button>';
         print '<button type="submit">ＯＫ</button>';

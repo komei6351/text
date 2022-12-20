@@ -18,7 +18,7 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'SELECT name FROM mst_pro WHERE code=?';
+        $sql = 'SELECT name FROM mst_product WHERE code=?';
         $stmt = $dbh -> prepare($sql);
         $data[] = $pro_code;
         $stmt -> execute($data);
@@ -35,15 +35,15 @@
 
     ?>
 
-    スタッフ削除<br />
+    商品削除<br />
     <br />
-    スタッフコード<br />
+    商品コード<br />
     <?php print $pro_code; ?>
     <br />
-    スタッフ名<br />
+    商品名<br />
     <?php print $pro_name;?>
     <br />
-    このスタッフを削除してよろしいですか？<br />
+    この商品を削除してよろしいですか？<br />
     <br />
     <form method="post" action="pro_delete_done.php">
     <input type="hidden" name="code" value="<?php print $pro_code; ?>">    
