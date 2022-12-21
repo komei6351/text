@@ -39,22 +39,23 @@
             print '<img src="./gazou/' . $pro_gazou['name'] . '">';
             print '<br />';
         }
+    }
         if ($pro_name == '' || preg_match('/\A[0-9]+\z/', $pro_price) == 0 || $pro_gazou['size'] > 1000000) {
             print '<form>';
             print '<button type="button" onclick="history.back()">戻る</button>';
             print '</form>';
         } else {
-            print '上記の商品を追加します。<br />';
-            print '<form method="post"action="pro_add_done.php">';
-            print '<input type="hidden" name="name" value="' . $pro_name . '">';
-            print '<input type="hidden" name="price" value="' . $pro_price . '">';
-            print '<input type="hidden" name="gazou_name" value="' . $pro_gazou['name'] . '">';
-            print '<br />';
-            print '<button type="button" onclick="history.back()">戻る</button>';
-            print '<button type="submit">ＯＫ</button>';
-            print '</form>';
-        }
+        print '上記の商品を追加します。<br />';
+        print '<form method="post"action="pro_add_done.php">';
+        print '<input type="hidden" name="name" value="' . $pro_name . '">';
+        print '<input type="hidden" name="price" value="' . $pro_price . '">';
+        print '<input type="hidden" name="gazou_name" value="' . $pro_gazou['name'] . '">';
+        print '<br />';
+        print '<button type="button" onclick="history.back()">戻る</button>';
+        print '<button type="submit">ＯＫ</button>';
+        print '</form>';
     }
+
 
     ?>
 
