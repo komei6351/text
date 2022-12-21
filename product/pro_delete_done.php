@@ -10,21 +10,23 @@
 
     try {
         $pro_code = $_POST['code'];
+        $pro_gazou_name = $_POST['gazou_name'];
 
         $dsn  = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = 'root';
         $password = '';
         $dbh  = new PDO($dsn, $user, $password);
         $dbh  -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $spl  = 'DELETE FROM mst_prodoct WHERE code=?';
+        $spl  = 'DELETE FROM mst_product WHERE code=?';
         $stmt = $dbh -> prepare($spl);
         $data[] = $pro_code;
         $stmt -> execute($data);
 
         $dbh = null;
 
-
+        if ($pro_gazou_name !='') {
+            unlink('./gazou/'.$pro_gazou_name);
+        }
     } catch (Exception $e) {
         print 'ただいま障害により大変ご迷惑をお掛けしております。';
         print '<br>' .$e -> getMessage();
