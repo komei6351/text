@@ -3,25 +3,25 @@
     <head>
         <meta charset="utf-8">
         <title>ななまる農園</title>
+        <h1>画像一覧</h1>
     </head>
     <body>
 
     <?php
 
     try {
-        $dsn  = 'mysql:dbtitle=shop;host=localhost;charset=utf8';
+        $dsn  = 'mysql:dbname=shop;host=localhost;charset=utf8';
         $user = 'root';
         $password = '';
         $dbh = new PDO($dsn, $user, $password);
         $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'SELECT code, title,description FROM file WHERE 1';
+        $sql = 'SELECT id, title,description FROM image WHERE 1';
         $stmt = $dbh -> prepare($sql);
         $stmt -> execute();
 
         $dbh = null;
 
-        print "タイトル一覧<br /><br />\n";
 
         print '<form method="post" action="kadai2_branch.php">'."\n";
         while (true) {
@@ -29,15 +29,15 @@
             if ($rec == false) {
                 break;
             }
-            print '<input type="radio" title="kadai2code" value="'.$rec['code'] .'">';
-            print $rec['title'].'---';
-            print $rec['description'].'円';
+            print '<input type="radio" name="kadai2id" value="'.$rec['id'] .'">';
+            print $rec['title'].'<br />';
+            print $rec['description'];
             print '<br />'."\n";
         }
-        print '<button type="submit" title="disp">参照</button>';
-        print '<button type="submit" title="add">追加</button>';
-        print '<button type="submit" title="edit">修正</button>';
-        print '<button type="submit" title="delete">削除</button>';
+        print '<button type="submit" name="disp">参照</button>';
+        print '<button type="submit" name="add">追加</button>';
+        print '<button type="submit" name="edit">修正</button>';
+        print '<button type="submit" name="delete">削除</button>';
         print '</form>'."\n";
 
     } catch (Exception $e) {
@@ -48,5 +48,17 @@
 
     ?>
 
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>サムネイル</th>
+        </tr>
+        <tr>
+            <th><?=$title?></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table>
     </body>
 </html>

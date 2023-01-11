@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>ろくまる農園</title>
+        <h1>画像の登録</h1>
     </head>
     <body>
 
-    タイトル追加<br />
+
     <br />
     <form method="post" action="kadai2_add_check.php"enctype="multipart/form-data">
         タイトルを入力してください。<br />

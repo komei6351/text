@@ -2,13 +2,13 @@
 
 if(isset($_POST['disp'])==true) {
 
-    if(isset($_POST['kadai2code'])==false) {
+    if(isset($_POST['kadai2id'])==false) {
         header('Location: kadai2_ng.php');
         exit()."\n";
     }
 
-    $kadai2_code=$_POST['kadai2code'];
-    header('Location: kadai2_disp.php?kadai2code='.$kadai2_code);
+    $kadai2_id=$_POST['kadai2id'];
+    header('Location: kadai2_disp.php?kadai2id='.$kadai2_id);
     exit()."\n";
 }
 
@@ -19,25 +19,25 @@ if(isset($_POST['add'])==true) {
 
 if(isset($_POST['edit'])==true) {
 
-    if(isset($_POST['kadai2code'])==false) {
+    if(isset($_POST['kadai2id'])==false) {
         header('Location: kadai2_ng.php');
         exit()."\n";
     }
 
-    $kadai2_code=$_POST['kadai2code'];
-    header('Location: kadai2_edit.php?kadai2code='.$kadai2_code);
+    $kadai2_id=$_POST['kadai2id'];
+    header('Location: kadai2_edit.php?kadai2id='.$kadai2_id);
     exit()."\n";
 }
 
 if(isset($_POST['delete'])==true) {
 
-    if(isset($_POST['kadai2code'])==false) {
+    if(isset($_POST['kadai2id'])==false) {
         header('Location: kadai2_ng.php');
         exit()."\n";
     }
     
-    $kadai2_code=$_POST['kadai2code'];
-    header('Location: kadai2_delete.php?kadai2code='.$kadai2_code);
+    $kadai2_id=$_POST['kadai2id'];
+    header('Location: kadai2_delete.php?kadai2id='.$kadai2_id);
     exit()."\n";
 }
 

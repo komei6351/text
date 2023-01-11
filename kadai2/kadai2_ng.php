@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>ろくまる農園</title>
+        <h1>画像選択エラー</h1>
     </head>
     <body>
 
